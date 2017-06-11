@@ -8,14 +8,22 @@ trait CafeService {
 
   def standardBillFor(items: Seq[MenuItem]): Price
 
+  def serviceCharge(items: Seq[MenuItem]): Price
 
 }
 
 private class DefaultCafeService extends CafeService {
+
   override def standardBillFor(items: Seq[MenuItem]) = {
-    items.map(name => MenuItem(name).price).sum
+    toModel(items).view.map(_.price).sum
   }
+
+  override def serviceCharge(items: Seq[MenuItem]) = -1
+
+  private def toModel (items: Seq[MenuItems] ): Seq[model.MenuItem] = items.map (name =>
+MenuItem (name) )
 }
+
 
 object CafeService {
   def apply(): CafeService = new DefaultCafeService
