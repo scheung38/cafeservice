@@ -1,5 +1,6 @@
 package com.fortressgain.cafe
 
+import com.fortressgain.cafe.model.ItemNotSupportedException
 import org.scalatest.{Matchers, WordSpec}
 
 class CafeServiceTest extends WordSpec with Matchers {
@@ -16,7 +17,7 @@ class CafeServiceTest extends WordSpec with Matchers {
     }
 
     "throw an exception on items not found in the menu" in {
-      a[CafeService] should be thrownBy {
+      a[ItemNotSupportedException] should be thrownBy {
         cafeService.standardBillFor(Seq("Not existing item"))
       }
 
