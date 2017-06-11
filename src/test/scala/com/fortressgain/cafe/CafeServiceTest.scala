@@ -25,7 +25,7 @@ class CafeServiceTest extends WordSpec with Matchers {
 
   "service charge" should {
 
-    "apply no service charge is applied when all purchased items are drinks" in {
+    "apply no service charge, when all purchased items are drinks" in {
       cafeService.serviceCharge(Seq("Coffee", "Cola")) shouldBe 0
     }
 

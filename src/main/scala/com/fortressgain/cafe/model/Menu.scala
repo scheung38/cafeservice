@@ -1,5 +1,14 @@
 package com.fortressgain.cafe.model
 
+trait Food
+
+trait Hot
+
+trait Cold
+
+trait Drink
+
+case class ItemNotSupportedException(message: String) extends Exception(message)
 
 sealed trait MenuItem {
   def price: Double
@@ -10,16 +19,6 @@ sealed trait MenuItem {
   def isHotFood: Boolean = isFood && isHot
 
 }
-
-case class ItemNotSupportedException(message: String) extends Exception(message)
-
-trait Food
-
-trait Hot
-
-trait Cold
-
-trait Drink
 
 
 object MenuItem {
