@@ -19,7 +19,7 @@ Cheese Sandwich - Cold - £2.00
 Steak Sandwich - Hot - £4.50
 Customers don’t know how much to tip and staff need tips to survive!
 
-# Step 1 : Standard Bill
+## Step 1 : Standard Bill
 
 Pass in a list of purchased items that produces a total bill.
 
